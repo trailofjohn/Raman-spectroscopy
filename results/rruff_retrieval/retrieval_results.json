@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "top1_accuracy": 0.547378104875805,
+    "top3_accuracy": 0.7635694572217111,
+    "top5_accuracy": 0.8390064397424103,
+    "top10_accuracy": 0.922723091076357,
+    "mrr": 0.6748957663220067
+  },
+  "intra_class_mean_sad": 0.9697861608761081,
+  "inter_class_mean_sad": 1.043474963626571,
+  "separation_ratio": 1.0759845888952386,
+  "n_spectra": 5432,
+  "n_families": 9,
+  "families": [
+    "Carbonate",
+    "Halide",
+    "Hydroxide",
+    "Native Element",
+    "Oxide",
+    "Phosphate",
+    "Silicate",
+    "Sulfate",
+    "Sulfide"
+  ],
+  "timestamp": "2025-12-25T14:48:05.802957"
+}

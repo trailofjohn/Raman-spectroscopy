@@ -1,0 +1,2 @@
+Model,Accuracy,Precision,Recall,F1_Score,Epochs_Trained,Final_Val_Loss,Final_Val_Acc
+1D-CNN,1.0,1.0,1.0,1.0,17,0.0,1.0

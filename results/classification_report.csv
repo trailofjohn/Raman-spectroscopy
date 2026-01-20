@@ -1,0 +1,10 @@
+,precision,recall,f1-score,support
+Species_1,1.0,1.0,1.0,40.0
+Species_2,1.0,1.0,1.0,40.0
+Species_3,1.0,1.0,1.0,40.0
+Species_4,1.0,1.0,1.0,40.0
+Species_5,1.0,1.0,1.0,40.0
+Species_6,1.0,1.0,1.0,40.0
+accuracy,1.0,1.0,1.0,1.0
+macro avg,1.0,1.0,1.0,240.0
+weighted avg,1.0,1.0,1.0,240.0

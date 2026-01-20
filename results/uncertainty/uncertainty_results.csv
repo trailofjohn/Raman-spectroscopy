@@ -1,0 +1,2 @@
+accuracy,mean_confidence,std_confidence,mean_uncertainty,correct_uncertainty,wrong_uncertainty,calibration_passed,mc_samples,used_pretrained_weights,data_source,timestamp
+0.8767290862896396,0.861682116985321,0.1430296003818512,0.10679226368665695,0.10274198651313782,0.13559874892234802,True,50,True,real,2025-12-25T11:00:33.441445

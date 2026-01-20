@@ -1,0 +1,24 @@
+{
+  "method": "NMF",
+  "metrics": {
+    "abundance_mse": 0.09460417479621822,
+    "abundance_mae": 0.2450146624203279,
+    "endmember_sad_mean": 1.0514215638072992,
+    "endmember_sad_std": 0.2542915380494537
+  },
+  "nmf_iterations": 500,
+  "data_source": "synthetic",
+  "endmember_names": [
+    "Olivine",
+    "Pyroxene",
+    "Plagioclase"
+  ],
+  "n_mixtures": 200,
+  "synth_metadata": {
+    "source": "synthetic",
+    "n_endmembers": 3,
+    "n_samples": 200,
+    "seed": 42
+  },
+  "timestamp": "2025-12-25T11:19:08.926449"
+}

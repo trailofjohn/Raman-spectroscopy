@@ -1,0 +1,2 @@
+Model,Accuracy,Precision,Recall,F1_Score,Epochs,Classes,Samples
+Mineral-CNN,0.615,0.6612193025986131,0.615,0.5798410099934374,28,10,1000
