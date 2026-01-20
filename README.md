@@ -55,8 +55,6 @@ raman_spectroscopy_pipeline/
 │
 ├── rruff/                          # Local RRUFF database (76K+ files)
 │
-├── gradio_app.py                   # Web interface (http://localhost:7860)
-├── cli_tool.py                     # Command-line interface
 ├── requirements.txt                # Python dependencies
 ├── setup_and_run.sh                # Setup script
 └── PROJECT_REPORT.md              # Scientific documentation
@@ -92,7 +90,6 @@ pip install -r requirements.txt
 ramanspy>=0.2.0          # Raman spectroscopy toolkit
 torch>=2.0.0             # Deep learning
 scikit-learn>=1.3.0      # Classical ML
-gradio>=4.0.0            # Web interface
 numpy>=1.24.0
 pandas>=2.0.0
 matplotlib>=3.7.0
@@ -131,39 +128,6 @@ python training/train_regressor.py
 
 ---
 
-## Using the Pipeline
-
-### Web Interface (Gradio)
-
-```bash
-python gradio_app.py
-# Visit http://localhost:7860
-```
-
-**Features:**
-- Upload RRUFF format spectra (.txt)
-- Wheat classification / Mineral family classification
-- Concentration regression (PLS/SVM)
-- Live spectrum visualization
-
-### Command Line Interface
-
-```bash
-# Wheat classification
-python cli_tool.py --input spectrum.csv --task wheat
-
-# Mineral family classification
-python cli_tool.py --input spectrum.csv --task mineral
-
-# Concentration regression
-python cli_tool.py --input spectrum.csv --task regress --model pls
-python cli_tool.py --input spectrum.csv --task regress --model svm
-
-# Help
-python cli_tool.py --help
-```
-
----
 
 ## Reproducibility
 
@@ -194,47 +158,6 @@ Raw Spectrum → Cosmic Ray Removal → Savitzky-Golay Smoothing → ASLS Baseli
 | Denoising | Savitzky-Golay | window=9, polyorder=3 |
 | Baseline | ASLS | λ=1e5, p=0.01 |
 | Normalization | Min-Max | 0-1 range |
-
----
-
-## Essential vs Non-Essential Files
-
-### Essential Files
-
-| Category | Files | Purpose |
-|----------|-------|---------|
-| **Core Modules** | `data/`, `preprocessing/`, `models/`, `evaluation/`, `utils/` | Pipeline logic |
-| **Training** | `training/*.py` | Model training scripts |
-| **Interfaces** | `gradio_app.py`, `cli_tool.py` | User-facing tools |
-| **Config** | `requirements.txt` | Dependencies |
-| **Docs** | `README.md`, `PROJECT_REPORT.md`, `FILE_NOTES.md` | Documentation |
-| **Models** | `results/models/*.pth`, `*.joblib` | Trained weights |
-| **RRUFF Data** | `rruff/` directory | Mineral spectra database |
-
-### Non-Essential Files (Can Be Removed)
-
-| File Pattern | Size | Reason |
-|--------------|------|--------|
-| `Data (1).mat` through `Data (5).mat` | 662 MB each | Duplicate data files |
-| `Data.mat*.tmp` | Various | Temporary/incomplete files |
-| `ILSdata (1).csv` | 10 MB | Duplicate CSV |
-| `.venv/` | Variable | Virtual environment (recreatable) |
-| `__pycache__/` directories | Variable | Python cache (regenerated) |
-| `data/cache/*.npz` | Variable | Preprocessing cache (regenerated) |
-
-**Total removable space:** ~4 GB (5 duplicate .mat + temp files)
-
-### Cleanup Command
-
-```bash
-# Remove duplicates and temp files (Windows PowerShell)
-Remove-Item "Data (*.mat"
-Remove-Item "Data.mat*.tmp"
-Remove-Item "ILSdata (1).csv"
-
-# Remove Python cache
-Get-ChildItem -Recurse -Directory -Filter "__pycache__" | Remove-Item -Recurse -Force
-```
 
 ---
 
@@ -273,7 +196,7 @@ python -m evaluation.metrics
 ### RRUFF Database Notes
 
 - **Invalid:** 1,415-class mineral identity classification (~3.7 samples/class)
-- **Valid:** ~10 chemical family classification
+- **Valid:**  11 chemical family classification
 - **Better:** Spectral Angle Distance (SAD) retrieval for identification
 
 ---
@@ -286,11 +209,3 @@ python -m evaluation.metrics
 
 ---
 
-## License
-
-[Add your license here]
-
----
-
-*Last Updated: January 2026*  
-*Version: 1.0*
